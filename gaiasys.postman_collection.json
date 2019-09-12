@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "f83af219-bf91-4637-9ea8-d3342eeeb29c",
+		"name": "gaiasys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/user",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tool Groups",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/toolgroups",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"toolgroups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "af46e23d-ac4b-4a91-aea9-191e6d473364",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"ACCESS_TOKEN\", jsonData.api_token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"admin1@gmail.com\",\n\t\"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/token",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tools",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/tools",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"tools"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tool Group by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{ACCESS_TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/toolgroups/1/tools",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"toolgroups",
+						"1",
+						"tools"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
