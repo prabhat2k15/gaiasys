@@ -12,6 +12,14 @@
 - Change R/W permission of storage and bootstrap folder
     ``` sudo chmod -R 777 storage bootstrap ```
 - Copy the .env.example to .env and change your DB credentials
+    ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=YOUR-DB-NAME
+    DB_USERNAME=YOUR-DB-USER
+    DB_PASSWORD=YOUR-DB-PASSWORD
+    ```
 - Migrate the migrations ``` php artisan migrate ```
 - Run the Db Seeder to insert some random data for testing ``` php artisan db:seed ```
 - Run the server ``` php artisan serve ```
